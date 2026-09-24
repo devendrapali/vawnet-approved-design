@@ -1,0 +1,28 @@
+/* BLOCK: Safety bar (quick exit) — site-wide, sticky */
+.safety-bar {
+  position: sticky; top: 0; z-index: 90;
+  background: var(--color-plum); color: var(--color-on-dark);
+  font-size: var(--fs-xs);
+}
+.safety-bar__inner {
+  display: flex; align-items: center; gap: var(--space-3);
+  min-height: var(--safety-height);
+  padding: 6px var(--gutter);
+}
+.safety-bar__icon { font-size: 15px; color: var(--color-brand-300); }
+.safety-bar__text { display: flex; flex-wrap: wrap; gap: 2px 14px; line-height: 1.4; }
+.safety-bar__text strong,
+.safety-bar__text b { color: var(--color-white); font-weight: var(--fw-bold); }
+.safety-bar__exit {
+  margin-left: auto; flex: none;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 16px; border-radius: var(--radius-pill);
+  background: var(--color-brand); color: var(--color-plum);
+  font-size: var(--fs-2xs); font-weight: var(--fw-heavy); text-decoration: none;
+}
+.safety-bar__exit .icon { stroke-width: 3; }
+.safety-bar__exit:hover { background: var(--color-white); color: var(--color-plum); }
+
+@media (max-width: 760px) {
+  .safety-bar__hint { display: none; }
+}

@@ -1,0 +1,27 @@
+/* BLOCK: Topic grid — numbered taxonomy cards */
+.topic-grid__list { --grid-gap: var(--space-5); }
+.topic-card {
+  display: flex; flex-direction: column; gap: 14px;
+  min-height: 210px; padding: 30px 26px 28px;
+  border: 1.5px solid var(--color-line); border-radius: var(--radius-lg);
+  background: var(--color-white); color: inherit; text-decoration: none;
+}
+.topic-card:hover { border-color: var(--color-brand); background: var(--color-tint-50); color: inherit; }
+.topic-card__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 50px; height: 50px; border-radius: var(--radius-xs);
+  background: var(--color-tint-100); color: var(--color-brand-600);
+  font-family: var(--font-heading); font-size: 1.0625rem; font-weight: var(--fw-heavy);
+}
+.topic-card__title {
+  font-family: var(--font-heading); font-size: var(--fs-h5); font-weight: var(--fw-heavy);
+  line-height: 1.25; letter-spacing: var(--ls-title); color: var(--color-ink);
+}
+.topic-card__count {
+  margin-top: auto;
+  font-size: var(--fs-caption); font-weight: var(--fw-heavy);
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-brand-600);
+}
+@media (max-width: 640px) {
+  .topic-card { min-height: 0; }
+}

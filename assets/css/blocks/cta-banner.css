@@ -1,0 +1,21 @@
+/* BLOCK: CTA banner — rounded panel, copy + stacked buttons.
+   Colour comes from the surface class on __box: .surface-brand (default) or .surface-dark. */
+.cta-banner__box {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-14); align-items: center;
+  padding: var(--space-14); border-radius: var(--radius-3xl);
+}
+.cta-banner__box::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  right: -80px; top: -120px; width: 380px; height: 380px; border-radius: var(--radius-circle);
+  background: var(--color-white-18);
+}
+.cta-banner__box.surface-dark::before { background: radial-gradient(circle, var(--color-glow-brand), transparent 68%); }
+.cta-banner .section-title { max-width: 20ch; margin-top: 18px; letter-spacing: var(--ls-display); }
+.cta-banner .section-text { max-width: 50ch; margin-top: var(--space-4); }
+.cta-banner__actions { display: flex; flex-direction: column; gap: var(--space-3); }
+
+@media (max-width: 900px) {
+  .cta-banner__box { grid-template-columns: 1fr; gap: var(--space-8); padding: var(--space-10) var(--space-7); }
+}
