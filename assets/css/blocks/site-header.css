@@ -20,6 +20,7 @@
 .site-nav__link:hover,
 .site-nav__link[aria-expanded="true"] { background: var(--color-tint-75); color: var(--color-brand-600); }
 .site-nav__link[aria-expanded="true"] .icon { transform: rotate(180deg); }
+.site-nav__link[aria-current="page"] { color: var(--color-brand-600); }
 
 .site-header__actions { margin-left: auto; display: flex; align-items: center; gap: 18px; }
 .site-header__login { font-size: var(--fs-md); font-weight: var(--fw-bold); color: var(--color-text); text-decoration: none; }

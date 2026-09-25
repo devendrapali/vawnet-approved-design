@@ -357,3 +357,26 @@ a:hover { color: var(--color-brand-700); }
   .section-head__link { margin-left: 0; }
   .check-list { grid-template-columns: 1fr; }
 }
+
+/* ---------- 10. Additions for inner pages ---------- */
+.tag--neutral { background: var(--color-tint-50); color: var(--color-muted); }
+.tag--dark { background: var(--color-plum); color: var(--color-white); }
+.text-link {
+  display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; cursor: pointer;
+  font-size: var(--fs-xs); font-weight: var(--fw-heavy); color: var(--color-brand-600); text-decoration: none;
+}
+.text-link:hover { color: var(--color-brand-700); }
+.text-link .icon { stroke-width: 2.8; }
+
+/* Save / bookmark toggle (search results, material, article) */
+.save-btn {
+  display: inline-flex; align-items: center; justify-content: flex-start; gap: 8px;
+  padding: 12px 20px; border: 1.5px solid var(--color-line-strong); border-radius: var(--radius-pill);
+  background: var(--color-white); color: var(--color-ink); cursor: pointer;
+  font-size: var(--fs-xs); font-weight: var(--fw-heavy); line-height: 1.2;
+  transition: background-color var(--ease), color var(--ease), border-color var(--ease);
+}
+.save-btn:hover { border-color: var(--color-brand); background: var(--color-tint-50); }
+.save-btn[aria-pressed="true"] { border-color: var(--color-plum); background: var(--color-plum); color: var(--color-white); }
+.save-btn[aria-pressed="true"] .icon { fill: currentColor; }
+

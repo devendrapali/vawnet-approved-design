@@ -49,3 +49,6 @@
   font-size: var(--fs-xs); font-weight: var(--fw-heavy); color: var(--color-brand-600);
 }
 .post-card__more .icon { stroke-width: 2.8; }
+
+/* Optional: load-more row under the grid */
+.post-grid__more { display: flex; margin-top: var(--space-10); }

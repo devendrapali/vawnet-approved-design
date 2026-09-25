@@ -3,7 +3,7 @@
   'use strict';
 
   /* Quick exit: button + double ESC */
-  var EXIT_URL = 'http://google.com/';
+  var EXIT_URL = 'https://weather.com';
   function quickExit() { window.location.replace(EXIT_URL); }
   document.querySelectorAll('[data-quick-exit]').forEach(function (el) {
     el.addEventListener('click', function (e) { e.preventDefault(); quickExit(); });
@@ -58,5 +58,47 @@
         if (input) input.value = pill.getAttribute('data-scope');
       });
     });
+  });
+
+  /* Save / bookmark toggles */
+  document.querySelectorAll('[data-save]').forEach(function (btn) {
+    var label = btn.querySelector('[data-save-label]');
+    var off = label ? label.textContent : '';
+    btn.addEventListener('click', function () {
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (label) label.textContent = on ? (btn.getAttribute('data-save-on') || 'Saved') : off;
+    });
+  });
+
+  /* Search results: active-filter chips, clear all, mobile facet toggle */
+  document.querySelectorAll('.search-results').forEach(function (block) {
+    var boxes = Array.prototype.slice.call(block.querySelectorAll('[data-facet]'));
+    var chips = block.querySelector('[data-active-filters]');
+    function render() {
+      if (!chips) return;
+      chips.innerHTML = '';
+      boxes.filter(function (b) { return b.checked; }).forEach(function (b) {
+        var chip = document.createElement('button');
+        chip.type = 'button'; chip.className = 'active-filter';
+        chip.setAttribute('aria-label', 'Remove filter: ' + b.value);
+        chip.innerHTML = '<span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+        chip.firstChild.textContent = b.value;
+        chip.addEventListener('click', function () { b.checked = false; render(); });
+        chips.appendChild(chip);
+      });
+    }
+    boxes.forEach(function (b) { b.addEventListener('change', render); });
+    block.querySelectorAll('[data-facets-clear]').forEach(function (btn) {
+      btn.addEventListener('click', function () { boxes.forEach(function (b) { b.checked = false; }); render(); });
+    });
+    block.querySelectorAll('[data-facets-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var open = !block.classList.contains('is-facets-open');
+        block.classList.toggle('is-facets-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+    render();
   });
 })();

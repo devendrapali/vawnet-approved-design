@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About & Contact · VAWnet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..700&family=Manrope:wght@400..800&display=swap">
+
+<!-- Global (always first) -->
+<link rel="stylesheet" href="assets/css/global.css">
+<!-- Blocks -->
+<link rel="stylesheet" href="assets/css/blocks/safety-bar.css">
+<link rel="stylesheet" href="assets/css/blocks/site-header.css">
+<link rel="stylesheet" href="assets/css/blocks/page-header.css">
+<link rel="stylesheet" href="assets/css/blocks/action-cards.css">
+<link rel="stylesheet" href="assets/css/blocks/media-split.css">
+<link rel="stylesheet" href="assets/css/blocks/stats-band.css">
+<link rel="stylesheet" href="assets/css/blocks/contact.css">
+<link rel="stylesheet" href="assets/css/blocks/site-footer.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ BLOCK: safety-bar ============ -->
+<div class="safety-bar" role="region" aria-label="Quick exit">
+  <div class="safety-bar__inner">
+    <svg class="icon icon--thin safety-bar__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+    <p class="safety-bar__text">
+      <strong>Your safety matters.</strong>
+      <span class="safety-bar__hint">Press <b>ESC</b> twice, or use the button, to leave this site immediately.</span>
+    </p>
+    <a class="safety-bar__exit" href="https://weather.com" data-quick-exit>Leave this site
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ============ BLOCK: site-header ============ -->
+<header class="site-header">
+  <div class="site-header__bar container">
+    <a class="site-header__logo" href="index.html"><img src="https://vawnet.org/themes/custom/vawnet/logo.svg" alt="VAWnet home"></a>
+
+    <button class="site-header__burger" type="button" aria-expanded="false" aria-controls="site-panel" aria-label="Menu" data-nav-toggle>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+    </button>
+
+    <div class="site-header__panel" id="site-panel">
+      <nav class="site-nav" aria-label="Main">
+        <button class="site-nav__link" type="button" aria-expanded="false" aria-controls="menu-topics" data-menu-toggle>Content Topics
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mega-menu" id="menu-topics" hidden>
+          <div class="mega-menu__inner container grid grid--5">
+            <div>
+              <a class="mega-menu__title" href="search.html">Engagement &amp; Collaboration</a>
+              <span class="mega-menu__count">612 materials</span>
+              <ul class="mega-menu__list">
+                <li><a href="search.html">Coalition Building</a></li>
+                <li><a href="search.html">Community Organizing</a></li>
+                <li><a href="search.html">Coordinated Community Response</a></li>
+                <li><a href="search.html">Media Advocacy / Literacy</a></li>
+                <li><a href="search.html">Movement Building</a></li>
+              </ul>
+            </div>
+            <div>
+              <a class="mega-menu__title" href="search.html">Intervention &amp; Prevention</a>
+              <span class="mega-menu__count">1,184 materials</span>
+              <ul class="mega-menu__list">
+                <li><a href="search.html">Accessibility</a></li>
+                <li><a href="search.html">Counseling &amp; Crisis Intervention</a></li>
+                <li><a href="search.html">Prevention Programming</a></li>
+                <li><a href="search.html">Residential / Shelter Services</a></li>
+                <li><a href="search.html">Trauma Informed Approach</a></li>
+              </ul>
+            </div>
+            <div>
+              <a class="mega-menu__title" href="search.html">Management &amp; Sustainability</a>
+              <span class="mega-menu__count">438 materials</span>
+              <ul class="mega-menu__list">
+                <li><a href="search.html">Fiscal Management</a></li>
+                <li><a href="search.html">Fund Development</a></li>
+                <li><a href="search.html">Funding Opportunities</a></li>
+                <li><a href="search.html">Leadership Development</a></li>
+                <li><a href="search.html">Staff Development</a></li>
+              </ul>
+            </div>
+            <div>
+              <a class="mega-menu__title" href="search.html">Policy &amp; Systems Advocacy</a>
+              <span class="mega-menu__count">903 materials</span>
+              <ul class="mega-menu__list">
+                <li><a href="search.html">Child Welfare</a></li>
+                <li><a href="search.html">Civil Legal Rights</a></li>
+                <li><a href="search.html">Criminal Justice</a></li>
+                <li><a href="search.html">Economic Justice</a></li>
+                <li><a href="search.html">Immigration / Resettlement</a></li>
+              </ul>
+            </div>
+            <div>
+              <a class="mega-menu__title" href="search.html">Research &amp; Statistics</a>
+              <span class="mega-menu__count">1,930 materials</span>
+              <ul class="mega-menu__list">
+                <li><a href="search.html">Communities of Color</a></li>
+                <li><a href="search.html">Disaster</a></li>
+                <li><a href="search.html">Housing &amp; Homelessness</a></li>
+                <li><a href="search.html">Human Trafficking</a></li>
+                <li><a href="search.html">Mental Health</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <button class="site-nav__link" type="button" aria-expanded="false" aria-controls="menu-types" data-menu-toggle>Material Types
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mega-menu" id="menu-types" hidden>
+          <div class="mega-menu__inner container grid grid--4">
+            <a class="mega-menu__card" href="search.html"><span class="mega-menu__card-title">Special Collections</span><span class="mega-menu__card-desc">Curated sets of our most highly valued resources.</span></a>
+            <a class="mega-menu__card" href="search.html"><span class="mega-menu__card-title">NRCDV Publications</span><span class="mega-menu__card-desc">Papers, briefs and guides authored in house.</span></a>
+            <a class="mega-menu__card" href="search.html"><span class="mega-menu__card-title">Training Tools</span><span class="mega-menu__card-desc">Webinars, slide decks and facilitation materials.</span></a>
+            <a class="mega-menu__card" href="search.html"><span class="mega-menu__card-title">General Materials</span><span class="mega-menu__card-desc">Everything else in the library, from every publisher.</span></a>
+          </div>
+        </div>
+
+        <a class="site-nav__link" href="news.html">News</a>
+        <a class="site-nav__link" href="index.html#events">Events</a>
+        <a class="site-nav__link" href="about.html" aria-current="page">About</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="site-header__login" href="#">Log in</a>
+        <a class="btn btn--plum btn--shadow" href="#">Create free account
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ BLOCK: page-header (overlap variant, followed by action-cards) ============ -->
+<section class="page-header page-header--overlap">
+  <div class="page-header__inner container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">About</li></ol></nav>
+    <div>
+      <p class="eyebrow">About VAWnet</p>
+      <h1 class="page-header__title">A free library, built for the people doing the work.</h1>
+      <p class="page-header__lead">VAWnet is a project of the National Resource Center on Domestic Violence — an online library of thousands of materials on domestic violence, sexual violence and related issues.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK: action-cards (overlap variant) ============ -->
+<section class="action-cards action-cards--overlap" aria-label="Quick links">
+  <div class="container grid grid--3 action-cards__grid">
+    <a class="action-card" href="about.html#contact">
+      <span class="action-card__icon"><svg class="icon icon--thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+      <span><span class="action-card__title">Submit a resource</span><span class="action-card__text">Suggest a material for our librarians to review.</span></span>
+    </a>
+    <a class="action-card action-card--dark" href="about.html">
+      <span class="action-card__icon"><svg class="icon icon--thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      <span><span class="action-card__title">Permissions &amp; reprints</span><span class="action-card__text">How to share, adapt and cite VAWnet materials.</span></span>
+    </a>
+    <a class="action-card action-card--brand" href="#contact">
+      <span class="action-card__icon"><svg class="icon icon--thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <span><span class="action-card__title">Contact the team</span><span class="action-card__text">Free technical assistance, answered by people.</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ BLOCK: media-split (reverse) ============ -->
+<section class="media-split media-split--reverse section">
+  <div class="media-split__inner container">
+    <div class="media-split__media">
+      <figure class="media-split__img media-split__img--a"><img src="https://vawnet.org/sites/default/files/assets/images/Newsletter-featuredimg_1.png" alt="VAWnet newsletter artwork"></figure>
+      <figure class="media-split__img media-split__img--b"><img src="https://vawnet.org/sites/default/files/assets/images/TrainingInstitute-featuredimg_0.png" alt="NRCDV Training Institute"></figure>
+      <div class="media-split__badge"><span class="media-split__badge-num">Since 1998</span><span class="media-split__badge-label">maintained by librarians</span></div>
+    </div>
+    <div class="media-split__content">
+      <p class="eyebrow">Our story</p>
+      <h2 class="section-title">Reviewed, tagged and kept current.</h2>
+      <p class="section-text">The library has been maintained since 1998 by librarians and technical assistance specialists at the NRCDV. Every item is reviewed before it is added, tagged against the same topic framework, and dated so you can see how current it is.</p>
+      <p class="section-text">Special Collections go a step further: they gather the most useful materials on a single subject, written up by a subject specialist and refreshed as the field changes.</p>
+      <ul class="check-list">
+        <li>Nothing behind a paywall</li>
+        <li>No login needed to read</li>
+        <li>Every item dated and credited</li>
+        <li>Spanish and plain-language versions linked</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK: stats-band ============ -->
+<section class="stats-band surface-dark">
+  <div class="stats-band__inner container">
+    <div>
+      <p class="eyebrow">The library in numbers</p>
+      <h2 class="section-title section-title--sm">Three decades of collecting what the field needs.</h2>
+      <p class="section-text">An account only exists so you can save what you find — everything else is open to everyone.</p>
+    </div>
+    <div class="grid grid--2 stats-band__grid">
+      <div class="stat-card"><span class="stat-card__num">4,067</span><span class="stat-card__label">Materials catalogued</span><span class="stat-card__sub">Every one free to read and share.</span></div>
+      <div class="stat-card"><span class="stat-card__num">78</span><span class="stat-card__label">Special Collections</span><span class="stat-card__sub">Curated and introduced by librarians.</span></div>
+      <div class="stat-card"><span class="stat-card__num">1998</span><span class="stat-card__label">Serving advocates since</span><span class="stat-card__sub">Nearly three decades online.</span></div>
+      <div class="stat-card"><span class="stat-card__num">1,200</span><span class="stat-card__label">TA requests a year</span><span class="stat-card__sub">Answered by the NRCDV team.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCK: contact ============ -->
+<section class="contact section" id="contact">
+  <div class="contact__inner container">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Tell us what you're looking for.</h2>
+      <p class="section-text">Can't find a resource? A member of our technical assistance team will respond, free of charge.</p>
+      <form class="contact__form" action="#" method="post">
+        <div class="contact__grid">
+          <div class="form-field"><label for="c-name">Name</label><input class="form-field__input" id="c-name" name="name" type="text" placeholder="Your name" autocomplete="name"></div>
+          <div class="form-field"><label for="c-email">Email</label><input class="form-field__input" id="c-email" name="email" type="email" placeholder="you@organization.org" autocomplete="email"></div>
+          <div class="form-field form-field--full"><label for="c-subject">Subject</label><input class="form-field__input" id="c-subject" name="subject" type="text" placeholder="What is this about?"></div>
+          <div class="form-field form-field--full"><label for="c-message">Message</label><textarea class="form-field__input" id="c-message" name="message" rows="5" placeholder="Describe what you're looking for"></textarea></div>
+        </div>
+        <button class="btn btn--plum btn--lg btn--shadow contact__submit" type="submit">Send message <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </form>
+    </div>
+    <div>
+      <ul class="contact__details">
+        <li class="contact__item">
+          <span class="contact__icon"><svg class="icon icon--thin" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><p class="contact__label">By phone</p><p class="contact__text">717-461-3939<br>Monday to Friday</p></div>
+        </li>
+        <li class="contact__item">
+          <span class="contact__icon"><svg class="icon icon--thin" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <div><p class="contact__label">By mail</p><p class="contact__text">National Resource Center on Domestic Violence<br>632 N. 2nd Street, Unit #589<br>Philadelphia, PA 19123-3001</p></div>
+        </li>
+      </ul>
+      <div class="contact__alert surface-dark">
+        <p class="contact__alert-title">In an emergency</p>
+        <p class="contact__alert-text">This is not a crisis line. Call the National Domestic Violence Hotline, available 24/7.</p>
+        <a class="contact__alert-num" href="tel:18007997233">1-800-799-7233</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ BLOCK: site-footer ============ -->
+<footer class="site-footer surface-dark">
+  <div class="site-footer__inner container">
+    <div class="site-footer__grid">
+      <div>
+        <img class="site-footer__logo" src="https://vawnet.org/sites/default/files/assets/images/full%20logo_color.png" alt="National Resource Center on Domestic Violence">
+        <p class="site-footer__address">A project of the National Resource Center on Domestic Violence. 632 N. 2nd Street, Unit #589, Philadelphia, PA 19123-3001. Phone 717-461-3939.</p>
+      </div>
+      <nav aria-labelledby="footer-library">
+        <h2 class="site-footer__heading" id="footer-library">Library</h2>
+        <ul class="site-footer__links">
+          <li><a href="search.html">Content Topics</a></li>
+          <li><a href="search.html">Special Collections</a></li>
+          <li><a href="search.html">NRCDV Publications</a></li>
+          <li><a href="search.html">Training Tools</a></li>
+          <li><a href="search.html">Advanced search</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-org">
+        <h2 class="site-footer__heading" id="footer-org">Organization</h2>
+        <ul class="site-footer__links">
+          <li><a href="news.html">News</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="about.html">About VAWnet</a></li>
+          <li><a href="about.html#contact">Technical assistance</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__heading">Stay in the loop</h2>
+        <p class="site-footer__text">Training announcements and new resources, monthly.</p>
+        <form class="newsletter-form" action="#">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="newsletter-form__input" id="footer-email" type="email" name="email" placeholder="Email address" required>
+          <button class="btn btn--brand btn--block" type="submit">Subscribe now
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© 2026 National Resource Center on Domestic Violence.</p>
+      <ul class="site-footer__legal">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Funding Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

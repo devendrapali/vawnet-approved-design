@@ -1,4 +1,4 @@
-# VAWnet v3 — static build (homepage)
+# VAWnet v3 — static build
 
 ```
 build-v3/
@@ -42,3 +42,27 @@ No inline styles. Every colour, font, size, radius and shadow is a variable in `
 - The collections and news sections are the same `post-grid` block; card parts (`__badge`, `__meta`, `__footer`, `__more`) are optional.
 - Switch any section’s colours by adding a surface class to the wrapper.
 - Only `site.js` initialises behaviour, scoped by `data-*` attributes, so a block can appear more than once on a page.
+
+## Inner pages (v3.1)
+| Page | Blocks (in order) |
+|---|---|
+| `search.html` | page-header (--search) · search-results · cta-banner |
+| `material.html` | page-header (--long) · content-layout · post-grid |
+| `news.html` | page-header (with filter aside) · featured-post · post-grid (+ __more) · cta-banner (dark) |
+| `article.html` | page-header (--long) · content-layout · post-grid |
+| `about.html` | page-header (--overlap) · action-cards (--overlap) · media-split (--reverse) · stats-band · contact |
+
+### New block files
+- **page-header**: breadcrumb (auto from Yoast/Rank Math or ACF), eyebrow or meta (tag + date), title, lead, actions (repeater), aside (filter pills), toggles for --search / --long / --overlap
+- **search-form** (block part): the scope pills + search field, now shared by hero and page-header. Also styles any `[data-scope-group]` pill set (sort, news filters)
+- **search-results**: facet sidebar (native `<details>`), toolbar, active-filter chips, result list, pagination. Map to FacetWP / SearchWP / your query
+- **content-layout**: main column (feature image, `.prose` WYSIWYG, `.numbered-list`, footer tags) + sidebar widgets (`.sidebar-card` with surface-tint / surface-dark, detail list, topic links, link list, news list, newsletter form)
+- **featured-post**: one post object, badge text
+- **contact**: form shortcode (Gravity/CF7 — reuse `.form-field` classes), contact items (repeater: icon, label, text), alert panel
+
+### Changes to existing homepage files
+- `hero.css`: search form rules moved to `search-form.css`. **Enqueue search-form.css on the homepage** (index.html updated).
+- `site-header.css`: added `.site-nav__link[aria-current="page"]`.
+- `post-grid.css`: added optional `.post-grid__more`.
+- `global.css`: appended section 10 (`.tag--neutral`, `.tag--dark`, `.text-link`, `.save-btn`). No tokens changed.
+- `site.js`: added save toggles and search-results behaviour (chips, clear all, mobile filter toggle).
