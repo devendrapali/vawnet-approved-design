@@ -176,15 +176,17 @@
 .sidebar-card {
   padding: 28px;
   border-radius: var(--radius-xl);
-  /* background: var(--color-white); */
+  background: var(--color-white);
   box-shadow: var(--shadow-card);
 }
 
 .sidebar-card.surface-tint {
+  background: var(--color-tint-50);
   box-shadow: none;
 }
 
 .sidebar-card.surface-dark {
+  background: var(--color-plum);
   box-shadow: var(--shadow-dark);
 }
 

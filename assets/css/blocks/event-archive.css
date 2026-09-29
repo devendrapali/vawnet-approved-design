@@ -1,0 +1,102 @@
+/* BLOCK: Event archive — upcoming events grouped by month (reuses .event-card from event-grid.css)
+   and --past: a list of past events with recording links. Load event-grid.css alongside. */
+.event-archive__group+.event-archive__group {
+  margin-top: var(--space-14);
+}
+
+.event-archive__month {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-line-strong);
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-heavy);
+  letter-spacing: var(--ls-title);
+  color: var(--color-ink);
+}
+
+.event-archive__count {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  color: var(--color-muted);
+}
+
+
+/* Past events */
+.event-list {
+  list-style: none;
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.event-row {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) auto;
+  gap: var(--space-8);
+  align-items: center;
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.event-row__date {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-heavy);
+  color: var(--color-ink);
+}
+
+.event-row__kind {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-heavy);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-brand-600);
+}
+
+.event-row__title {
+  margin-top: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-heavy);
+  line-height: var(--lh-title);
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.event-row__title a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.event-row__title a:hover {
+  color: var(--color-brand-600);
+}
+
+.event-row__by {
+  margin-top: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+
+.event-row__cta .icon {
+  fill: currentColor;
+}
+
+.event-archive__more {
+  display: flex;
+  margin-top: var(--space-10);
+}
+
+@media (max-width: 760px) {
+  .event-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .event-row__cta {
+    justify-self: start;
+  }
+}
