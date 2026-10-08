@@ -3,7 +3,7 @@
   'use strict';
 
   /* Quick exit: button + double ESC */
-  var EXIT_URL = 'https://weather.com';
+  var EXIT_URL = 'https://google.com';
   function quickExit() { window.location.replace(EXIT_URL); }
   document.querySelectorAll('[data-quick-exit]').forEach(function (el) {
     el.addEventListener('click', function (e) { e.preventDefault(); quickExit(); });
