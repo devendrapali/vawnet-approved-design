@@ -1,0 +1,71 @@
+/* BLOCK: Special collection — extends content-layout for multi-page collections.
+   Left: collection menu (.sc-nav). Right: page content (.prose) + .sc-pager (previous / up / next).
+   Nav comes first in the DOM so it sits above the content on mobile. */
+.content-layout--sc .content-layout__inner { grid-template-columns: 320px minmax(0, 1fr); }
+
+/* Collection menu */
+.sc-nav { padding: 0; overflow: hidden; }
+.sc-nav__summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  padding: 24px 28px 16px; list-style: none; cursor: default;
+}
+.sc-nav__summary::-webkit-details-marker { display: none; }
+.sc-nav__summary .sidebar-card__title { margin: 0; }
+.sc-nav__count { font-size: var(--fs-micro); font-weight: var(--fw-heavy); letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--color-muted); white-space: nowrap; }
+.sc-nav__summary .icon { display: none; color: var(--color-brand-600); transition: transform 0.2s ease; }
+.sc-nav__list { list-style: none; counter-reset: sc; padding: 0 12px 16px; }
+.sc-nav__list a {
+  counter-increment: sc;
+  display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--space-2); align-items: baseline;
+  padding: 10px 16px; border-radius: var(--radius-md);
+  font-size: var(--fs-sm); font-weight: var(--fw-semibold); line-height: var(--lh-snug); color: var(--color-text); text-decoration: none;
+}
+.sc-nav__list a::before {
+  content: counter(sc, decimal-leading-zero);
+  font-family: var(--font-heading); font-size: var(--fs-2xs); font-weight: var(--fw-heavy); color: var(--color-muted);
+}
+.sc-nav__list a:hover { background: var(--color-tint-50); color: var(--color-ink); }
+.sc-nav__list a[aria-current="page"] { background: var(--color-tint-75); font-weight: var(--fw-heavy); color: var(--color-ink); }
+.sc-nav__list a[aria-current="page"]::before { color: var(--color-brand-600); }
+.sc-nav__footer { padding: 16px 28px 24px; border-top: 1px solid var(--color-line); }
+
+/* Responsive video embed inside .prose */
+.prose .embed { overflow: hidden; aspect-ratio: 16 / 9; border-radius: var(--radius-xl); box-shadow: var(--shadow-card); background: var(--color-plum); }
+.prose .embed iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+/* Previous / next — same measure as .prose so the edges line up */
+.sc-pager {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4);
+  max-width: 68ch; margin-top: var(--space-10); padding-top: var(--space-8); border-top: 1px solid var(--color-line);
+  font-size: var(--fs-body-lg);
+}
+.sc-pager__link {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: 20px 24px; border: 1.5px solid var(--color-line); border-radius: var(--radius-lg);
+  background: var(--color-white); text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.sc-pager__link--next { grid-column: 2; justify-content: flex-end; text-align: right; }
+.sc-pager__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sc-pager__label { font-size: var(--fs-micro); font-weight: var(--fw-heavy); letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--color-muted); }
+.sc-pager__title { font-family: var(--font-heading); font-size: var(--fs-md); font-weight: var(--fw-bold); line-height: var(--lh-title); color: var(--color-ink); }
+.sc-pager__arrow {
+  flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill);
+  background: var(--color-tint-75); color: var(--color-brand-700);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.sc-pager__link:hover { border-color: var(--color-brand-600); background: var(--color-tint-50); }
+.sc-pager__link:hover .sc-pager__arrow { background: var(--color-brand); color: var(--color-plum); }
+
+@media (max-width: 1000px) {
+  .content-layout--sc .content-layout__inner { grid-template-columns: 1fr; }
+  .content-layout--sc .content-layout__sidebar { display: flex; }
+  .sc-nav__summary { cursor: pointer; padding-bottom: 24px; }
+  .sc-nav[open] .sc-nav__summary { padding-bottom: 16px; }
+  .sc-nav__summary .icon { display: block; }
+  .sc-nav[open] .sc-nav__summary .icon { transform: rotate(180deg); }
+}
+@media (max-width: 640px) {
+  .sc-pager { grid-template-columns: 1fr; }
+  .sc-pager__link--next { grid-column: auto; }
+}
